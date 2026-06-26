@@ -14,7 +14,8 @@ const config: Config = {
         bone: {
           DEFAULT: "#f3f0e9",
           muted: "#a7a39a",
-          faint: "#6e6b64",
+          // Lightened from #6e6b64 to clear WCAG AA (~5:1) for small labels.
+          faint: "#8a857b",
         },
         lime: {
           DEFAULT: "#d6ff4b",

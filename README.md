@@ -53,9 +53,10 @@ public/
 All copy, experience, skills, education, and contact details live in
 [`src/data/content.ts`](src/data/content.ts). Update that one file to change the site.
 
-> **Before deploying:** replace the placeholder `github` and `linkedin` URLs in
-> `src/data/content.ts` with the real profile links, and set the production domain in
-> `layout.tsx`, `robots.ts`, and `sitemap.ts`.
+> **Before deploying:** set your production domain in `layout.tsx`, `robots.ts`, and
+> `sitemap.ts` (currently a placeholder). Social links point to the real
+> [GitHub](https://github.com/Hrant13k) and
+> [LinkedIn](https://www.linkedin.com/in/hrantk13/) profiles.
 
 ## Accessibility & SEO
 

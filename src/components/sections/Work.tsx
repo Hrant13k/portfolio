@@ -29,42 +29,45 @@ function Row({
       <button
         onClick={onToggle}
         aria-expanded={open}
-        className="relative grid w-full grid-cols-12 items-center gap-4 py-7 text-left transition-colors"
+        aria-label={`${item.role} at ${item.company}, ${item.period}`}
+        className="relative flex w-full items-center gap-4 py-7 text-left transition-colors sm:gap-6"
       >
         {/* hover wash */}
         <span
           aria-hidden
-          className={`pointer-events-none absolute inset-x-[-1.5rem] inset-y-0 rounded-2xl bg-bone/[0.02] transition-opacity duration-500 ${
+          className={`pointer-events-none absolute inset-x-[-1rem] inset-y-0 rounded-2xl bg-bone/[0.02] transition-opacity duration-500 sm:inset-x-[-1.5rem] ${
             open ? "opacity-100" : "opacity-0 group-hover:opacity-100"
           }`}
         />
-        <span className="col-span-12 flex items-center gap-5 sm:col-span-6">
-          <span className="font-mono text-xs text-lime">
-            0{index + 1}
-          </span>
-          <span>
-            <span className="block font-serif text-2xl leading-tight text-bone transition-colors sm:text-3xl">
+
+        {/* title block */}
+        <span className="flex min-w-0 flex-1 items-baseline gap-4 sm:gap-5">
+          <span className="font-mono text-xs text-lime">0{index + 1}</span>
+          <span className="min-w-0">
+            <span className="block font-serif text-[1.6rem] leading-tight text-bone transition-colors sm:text-3xl">
               {item.role}
             </span>
-            <span className="mt-0.5 block font-mono text-[0.72rem] uppercase tracking-[0.16em] text-bone-muted">
+            <span className="mt-1 block font-mono text-[0.7rem] uppercase tracking-[0.16em] text-bone-muted sm:text-[0.72rem]">
               {item.company} · {item.type}
             </span>
           </span>
         </span>
 
-        <span className="col-span-7 hidden text-sm text-bone-muted sm:col-span-4 sm:block">
+        {/* summary — desktop only, where there's room */}
+        <span className="hidden max-w-xs text-sm text-bone-muted lg:block xl:max-w-sm">
           {item.summary}
         </span>
 
-        <span className="col-span-5 flex items-center justify-end gap-4 sm:col-span-2">
-          <span className="hidden text-right font-mono text-[0.7rem] uppercase tracking-[0.12em] text-bone-faint lg:block">
+        {/* meta + toggle */}
+        <span className="flex shrink-0 items-center gap-4 self-start sm:self-center">
+          <span className="hidden whitespace-nowrap text-right font-mono text-[0.7rem] uppercase tracking-[0.12em] text-bone-faint lg:block">
             {item.period}
           </span>
           <span
-            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-ink-line text-bone transition-all duration-300 ${
+            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-lg leading-none text-bone transition-all duration-300 ${
               open
                 ? "rotate-45 border-lime bg-lime text-ink"
-                : "group-hover:border-bone-muted"
+                : "border-ink-line group-hover:border-bone-muted"
             }`}
             aria-hidden
           >
@@ -82,7 +85,7 @@ function Row({
             transition={{ duration: 0.5, ease: EASE }}
             className="overflow-hidden"
           >
-            <div className="grid gap-8 pb-9 md:grid-cols-12">
+            <div className="grid gap-8 pb-9 md:grid-cols-12 md:pt-5">
               <div className="md:col-span-1" />
               <ul className="flex flex-col gap-4 md:col-span-7">
                 {item.highlights.map((h, i) => (

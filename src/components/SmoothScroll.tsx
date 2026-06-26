@@ -40,7 +40,8 @@ export default function SmoothScroll() {
       const el = document.querySelector(id);
       if (el) {
         e.preventDefault();
-        lenis.scrollTo(el as HTMLElement, { offset: -8, duration: 1.4 });
+        // Clear the fixed nav (~70px) so section headings aren't hidden beneath it.
+        lenis.scrollTo(el as HTMLElement, { offset: -88, duration: 1.4 });
       }
     };
     document.addEventListener("click", onClick);

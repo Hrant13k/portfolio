@@ -8,14 +8,14 @@ export const profile = {
   firstName: "Hrant",
   lastName: "Karapetyan",
   role: "Full-Stack Software Engineer",
-  // Design is framed as a complementary strength, not a separate identity.
-  roleQualifier: "with a product & UX design edge",
   location: "Yerevan, Armenia",
   email: "hrantk1313@gmail.com",
   phone: "+374-43-23-30-23",
   phoneHref: "+37443233023",
-  github: "https://github.com/",
-  linkedin: "https://linkedin.com/",
+  github: "https://github.com/Hrant13k",
+  githubHandle: "Hrant13k",
+  linkedin: "https://www.linkedin.com/in/hrantk13/",
+  linkedinHandle: "in/hrantk13",
   cv: "/hrant-karapetyan-cv.pdf",
   // The core narrative — engineer first, designer-minded throughout.
   tagline:
@@ -27,7 +27,7 @@ export const profile = {
 export const stats = [
   { value: "5+", label: "International clients shipped for" },
   { value: "2+", label: "Years building for the web" },
-  { value: "∞", label: "Curiosity for how things work" },
+  { value: "4", label: "Roles across engineering & design" },
 ] as const;
 
 export type Experience = {
