@@ -78,6 +78,7 @@ const jsonLd = {
   address: { "@type": "PostalAddress", addressLocality: "Yerevan", addressCountry: "Armenia" },
   url: siteUrl,
   knowsAbout: ["Full-Stack Development", "React", "Node.js", "TypeScript", "UI/UX Design"],
+  sameAs: [profile.github, profile.linkedin, profile.behance],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -12,6 +12,9 @@ const icons = {
   linkedin: (
     <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14Zm1.78 13.02H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
   ),
+  behance: (
+    <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.221 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z" />
+  ),
   email: (
     <path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm10 7.4 8-5.4H4l8 5.4Zm0 2.2L3 7.5V18h18V7.5l-9 6.1Z" />
   ),
@@ -32,6 +35,12 @@ const links = [
     href: profile.linkedin,
     handle: profile.linkedinHandle,
     icon: icons.linkedin,
+  },
+  {
+    label: "Behance",
+    href: profile.behance,
+    handle: profile.behanceHandle,
+    icon: icons.behance,
   },
   {
     label: "Email",
@@ -106,7 +115,7 @@ export default function Contact() {
         </div>
 
         {/* link grid */}
-        <div className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-ink-line bg-ink-line sm:grid-cols-4">
+        <div className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-ink-line bg-ink-line lg:grid-cols-5">
           {links.map((l, i) => (
             <motion.a
               key={l.label}
@@ -117,7 +126,9 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.06 }}
-              className="group flex flex-col gap-3 bg-ink p-6 transition-colors hover:bg-ink-raised"
+              className={`group flex flex-col gap-3 bg-ink p-6 transition-colors hover:bg-ink-raised ${
+                i === links.length - 1 ? "col-span-2 lg:col-span-1" : ""
+              }`}
             >
               <span className="flex items-center justify-between font-mono text-[0.68rem] uppercase tracking-[0.16em] text-bone-faint">
                 <span className="flex items-center gap-2.5">

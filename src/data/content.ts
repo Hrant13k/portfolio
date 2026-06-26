@@ -16,6 +16,8 @@ export const profile = {
   githubHandle: "Hrant13k",
   linkedin: "https://www.linkedin.com/in/hrantk13/",
   linkedinHandle: "in/hrantk13",
+  behance: "https://www.behance.net/hrantk13",
+  behanceHandle: "hrantk13",
   cv: "/hrant-karapetyan-cv.pdf",
   // The core narrative — engineer first, designer-minded throughout.
   tagline:
