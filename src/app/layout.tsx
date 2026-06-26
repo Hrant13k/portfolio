@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import { profile } from "@/data/content";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -22,7 +23,6 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://hrantkarapetyan.dev";
 const description =
   "Hrant Karapetyan — Full-Stack Software Engineer in Yerevan building complete products end to end, with a UI/UX design background that shapes how he engineers.";
 

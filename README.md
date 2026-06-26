@@ -27,6 +27,26 @@ npm run build
 npm run start
 ```
 
+## Deploy to Vercel
+
+This is a standard Next.js App Router app — Vercel deploys it with zero config.
+
+1. Push this repo to GitHub/GitLab/Bitbucket.
+2. In [Vercel](https://vercel.com/new), **Import** the repo. Framework preset
+   (Next.js), build command (`next build`), and output are detected
+   automatically — just click **Deploy**.
+3. The site URL is resolved automatically from Vercel's
+   `VERCEL_PROJECT_PRODUCTION_URL`, so canonical links, the sitemap, robots,
+   and Open Graph images all point at the live `*.vercel.app` domain out of
+   the box — no edits needed.
+
+**Custom domain:** add it under *Project → Settings → Domains*, then set the
+environment variable `NEXT_PUBLIC_SITE_URL` to that domain (e.g.
+`https://hrantkarapetyan.com`) and redeploy. See [`.env.example`](.env.example).
+
+Security headers (HSTS, `X-Content-Type-Options`, `X-Frame-Options`,
+`Referrer-Policy`, `Permissions-Policy`) are applied via `next.config.mjs`.
+
 ## Structure
 
 ```
@@ -53,10 +73,11 @@ public/
 All copy, experience, skills, education, and contact details live in
 [`src/data/content.ts`](src/data/content.ts). Update that one file to change the site.
 
-> **Before deploying:** set your production domain in `layout.tsx`, `robots.ts`, and
-> `sitemap.ts` (currently a placeholder). Social links point to the real
-> [GitHub](https://github.com/Hrant13k) and
-> [LinkedIn](https://www.linkedin.com/in/hrantk13/) profiles.
+> The site URL is environment-driven (see [Deploy to Vercel](#deploy-to-vercel)) —
+> nothing to hardcode. Social links point to the real
+> [GitHub](https://github.com/Hrant13k),
+> [LinkedIn](https://www.linkedin.com/in/hrantk13/), and
+> [Behance](https://www.behance.net/hrantk13) profiles.
 
 ## Accessibility & SEO
 
